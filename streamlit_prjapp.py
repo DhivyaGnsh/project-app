@@ -3,8 +3,9 @@ import pandas as pd
 import os
 
 @st.cache_data
-def load_data(file_path=None):
-        return pd.read_csv('https://raw.githubusercontent.com/DhivyaGnsh/project-app/refs/heads/main/streamlit_prjapp.py')
+def load_data():
+        url="https://raw.githubusercontent.com/DhivyaGnsh/project-app/refs/heads/main/streamlit_prjapp.py"
+        return pd.read_csv(url)
 
 data = load_data()
 data['revenue'] = data['sale_price'] * data['quantity']
