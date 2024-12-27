@@ -20,6 +20,10 @@ if data is not None:
     st.write(data)
 
 data = load_data()
+data['sale_price'] = pd.to_numeric(data['sale_price'], errors='coerce')
+data['quantity'] = pd.to_numeric(data['quantity'], errors='coerce')
+data['revenue'] = data['sale_price'] * data['quantity']
+
 data['revenue'] = data['sale_price'] * data['quantity']
 data['order_year'] = pd.to_datetime(data['order_date']).dt.year
 
