@@ -4,11 +4,7 @@ import os
 
 @st.cache_data
 def load_data(file_path=None):
-    if file_path:
         return pd.read_csv('https://raw.githubusercontent.com/DhivyaGnsh/project-app/refs/heads/main/streamlit_prjapp.py')
-    else:
-        st.error("No file provided. Please upload a CSV file or check the default path.")
-        return pd.DataFrame()  
 
 data = load_data()
 data['revenue'] = data['sale_price'] * data['quantity']
