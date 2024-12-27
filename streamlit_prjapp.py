@@ -1,6 +1,24 @@
 import streamlit as st
 import pandas as pd
-import os
+
+@st.cache
+def load_data():
+    url = "https://raw.githubusercontent.com/DhivyaGnsh/project-app/refs/heads/main/streamlit_prjapp.py"
+    try:
+        # Adjust parameters as needed based on file structure
+        data = pd.read_csv(url, sep=",", encoding="utf-8")
+        return data
+    except pd.errors.ParserError as e:
+        st.error(f"Error parsing CSV file: {e}")
+        return None
+    except Exception as e:
+        st.error(f"An unexpected error occurred: {e}")
+        return None
+
+data = load_data()
+if data is not None:
+    st.write(data)
+
 
 @st.cache_data
 def load_data():
