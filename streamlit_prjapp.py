@@ -5,7 +5,7 @@ import os
 @st.cache_data
 def load_data(file_path=None):
     if file_path:
-        return pd.read_csv('https://github.com/DhivyaGnsh/project-app.git')
+        return pd.read_csv('gh repo clone DhivyaGnsh/project-app')
     else:
         st.error("No file provided. Please upload a CSV file or check the default path.")
         return pd.DataFrame()  
