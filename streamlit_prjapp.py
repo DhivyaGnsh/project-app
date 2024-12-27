@@ -4,7 +4,7 @@ import pandas as pd
 # Load the dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv('C:/Users/Mukesh/Downloads/retail_orders.csv')
+    return pd.read_csv('C:\Users\Mukesh\Downloads\retail_orders.csv')
 
 data = load_data()
 data['revenue'] = data['sale_price'] * data['quantity']
