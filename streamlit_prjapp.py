@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-@st.cache
+@st.cache_data
 def load_data():
     url = "https://raw.githubusercontent.com/DhivyaGnsh/project-app/refs/heads/main/streamlit_prjapp.py"
     try:
@@ -18,12 +18,6 @@ def load_data():
 data = load_data()
 if data is not None:
     st.write(data)
-
-
-@st.cache_data
-def load_data():
-        url="https://raw.githubusercontent.com/DhivyaGnsh/project-app/refs/heads/main/streamlit_prjapp.py"
-        return pd.read_csv(url)
 
 data = load_data()
 data['revenue'] = data['sale_price'] * data['quantity']
