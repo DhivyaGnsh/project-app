@@ -1,10 +1,14 @@
 import streamlit as st
 import pandas as pd
+import os
 
-# Load the dataset
 @st.cache_data
-def load_data():
-    return pd.read_csv('C:/Users/Mukesh/Downloads/retail_orders.csv')
+def load_data(file_path=None):
+    if file_path:
+        return pd.read_csv(file_path)
+    else:
+        st.error("No file provided. Please upload a CSV file or check the default path.")
+        return pd.DataFrame()  
 
 data = load_data()
 data['revenue'] = data['sale_price'] * data['quantity']
