@@ -1,5 +1,11 @@
 import streamlit as st
 import pandas as pd
+import pickle
+
+def load_model():
+    with open("retail_orders.pkl")
+    return pickle.load(f)
+     
 
 @st.cache_data
 def load_data():
