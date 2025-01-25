@@ -6,7 +6,6 @@ def load_model():
     with open("retail_orders.pkl")
     return pickle.load(f)
      
-
 @st.cache_data
 def load_data():
     url = "https://raw.githubusercontent.com/DhivyaGnsh/project-app/refs/heads/main/streamlit_prjapp.py"
